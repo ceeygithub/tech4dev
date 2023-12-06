@@ -63,8 +63,10 @@
 
         .gallery {
             background-color: rgba(128, 128, 128, 0.224);
-            padding: 10px;
-            margin: 0 auto;
+            padding: 15px;
+            margin: 1rem auto;
+            border-radius: 5px;
+
         }
 
         ul {
@@ -81,12 +83,15 @@
             height: 300px;
             width: 100%;
             margin: 0 auto;
+            max-width: 100%;
         }
 
         .imageWrapper img {
             height: 100%;
             width: 100%;
             object-fit: cover;
+            border-radius: 10px;
+            max-width: 100%;
         }
 
         .imageDetail {
@@ -99,6 +104,7 @@
             display: flex;
             align-items: center;
             padding: 10px;
+            border-radius: 10px 10px 0 0;
         }
     </style>
 </head>
@@ -147,10 +153,10 @@
                 alt: "Christmas car"
             },
             {
-                imageName: "Christmas high",
+                imageName: "Christmas santa ",
                 imageLink:
-                    "https://images.pexels.com/photos/11345519/pexels-photo-11345519.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-                alt: "Christmas high"
+                    "https://images.pexels.com/photos/1578010/pexels-photo-1578010.jpeg?auto=compress&cs=tinysrgb&w=600",
+                alt: "Christmas santa"
             },
             {
                 imageName: "Christmas tree",
@@ -174,7 +180,7 @@
                 li.innerHTML = `
           <div class="card">
             <div class="imageWrapper">
-              <img src="${img.imageLink}" alt="${img.alt}" />
+              <img src="${img.imageLink}" alt="${img.alt}" width="100%" height="300px"/>
             </div>
             <span class="imageDetail">
               ${img.imageName}
