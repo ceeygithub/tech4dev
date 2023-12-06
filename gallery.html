@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style-type: none;
+        }
+
+        .container {
+            max-width: 1220px;
+            margin: 0 auto;
+        }
+
+        form {
+            max-width: 700px;
+            margin: 30px auto;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 50px;
+
+        }
+
+        .btn {
+            background-color: black;
+            padding: 8px 15px;
+            color: white;
+            border-radius: 20px;
+            border: none;
+            cursor: pointer;
+            width: 200px;
+            font-size: 20px;
+            margin-top: 2rem;
+        }
+
+        .row {
+            display: flex;
+            gap: 1rem;
+            flex-direction: column;
+            align-items: start;
+            justify-content: flex-start;
+        }
+
+        input[ type="text"] {
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid black;
+            /* margin: 10px; */
+            width: 100%;
+
+        }
+
+        .btn-wrapper {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .gallery {
+            background-color: rgba(128, 128, 128, 0.224);
+            padding: 10px;
+            margin: 0 auto;
+        }
+
+        ul {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            position: relative;
+        }
+
+        .imageWrapper {
+            height: 300px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .imageWrapper img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .imageDetail {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.495);
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form action="">
+            <div class="row">
+                <label for="imageName">Image Name</label>
+                <input type="text" id="imageName">
+            </div>
+            <div class="row">
+                <label for="imageLink">Image Link</label>
+                <input type="text" id="imageLink">
+
+            </div>
+            <div class="btn-wrapper">
+                <button class="btn">Add</button>
+                <button class="btn">Remove</button>
+            </div>
+        </form>
+        <div class="gallery">
+            <ul class="inner-gallery">
+
+            </ul>
+        </div>
+    </div>
+    <script>
+        const imageList = [
+            {
+                imageName: "Christmas decoration",
+                imageLink:
+                    "https://images.pexels.com/photos/5727927/pexels-photo-5727927.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                alt: "Christmas decoration"
+            },
+            {
+                imageName: "Christmas gift",
+                imageLink:
+                    "https://images.pexels.com/photos/5728187/pexels-photo-5728187.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                alt: "Christmas gift"
+            },
+            {
+                imageName: "Christmas car",
+                imageLink:
+                    "https://images.pexels.com/photos/3444345/pexels-photo-3444345.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                alt: "Christmas car"
+            },
+            {
+                imageName: "Christmas high",
+                imageLink:
+                    "https://images.pexels.com/photos/11345519/pexels-photo-11345519.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                alt: "Christmas high"
+            },
+            {
+                imageName: "Christmas tree",
+                imageLink:
+                    "https://images.pexels.com/photos/18332734/pexels-photo-18332734/free-photo-of-tree-with-autumnal-leaves.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                alt: "Christmas tree"
+            },
+            {
+                imageName: "Snow man",
+                imageLink:
+                    "https://images.pexels.com/photos/753501/pexels-photo-753501.jpeg?cs=srgb&dl=pexels-barry-plott-753501.jpg&fm=jpg&_gl=1*17qkyb1*_ga*MjA0OTY1OTM0MS4xNzAwNjM1Nzcy*_ga_8JE65Q40S6*MTcwMTg0MjEyMS4yLjEuMTcwMTg0MjIyOS4wLjAuMA..",
+                alt: "Snow man"
+            }
+        ]
+        const innerGallery = document.querySelector('.inner-gallery')
+
+
+        function fillGallery() {
+            imageList.forEach((img) => {
+                const li = document.createElement('li');
+                li.innerHTML = `
+          <div class="card">
+            <div class="imageWrapper">
+              <img src="${img.imageLink}" alt="${img.alt}" />
+            </div>
+            <span class="imageDetail">
+              ${img.imageName}
+            </span>
+          </div>`;
+                innerGallery.appendChild(li);
+            });
+        }
+
+        fillGallery();
+
+    </script>
+</body>
+
+</html>

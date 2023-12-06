@@ -1,0 +1,157 @@
+/* html {
+    height: 100%;
+} */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    /* background: linear-gradient(#141e30, #243b55); */
+}
+.wave {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    z-index: -1;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    position: fixed;
+    left: 4%;
+    width: 90%;
+    z-index: 10;
+    border-bottom: 1px solid rgba(102, 103, 102, 0.444);
+   align-items: center;
+}
+
+nav ul{
+    display: flex;
+    list-style-type: none;
+}
+nav ul li{
+  margin-left: 1rem;
+  font-weight: 400;
+font-size: larger;
+}
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+   
+    grid-gap: 7rem;
+    /* padding: 0 2rem; */
+}
+
+.img {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.logo{
+    width: 100px;
+    z-index: 10;
+}
+
+.img img {
+    width: 600px;
+}
+.login-box {
+    position: absolute;
+    top: 60%;
+    right: 0;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, .5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    border-radius: 10px;
+}
+
+.login-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+}
+
+.login-box .user-box {
+    position: relative;
+}
+
+.login-box .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+
+.login-box .user-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.login-box .user-box input:focus~label,
+.login-box .user-box input:valid~label {
+    top: -20px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 12px;
+}
+input[type="submit"] {
+    background-color: #37af65;
+    display: block;
+    width: 100%;
+    border: 2px solid #37af65;
+}
+
+@media screen and (max-width: 1050px) {
+    .container {
+        grid-gap: 5rem;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    form {
+        width: 300px;
+    }
+
+    .img img {
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 940px) {
+    .container {
+        grid-template-columns: 1fr;
+    
+    }
+
+    .img {
+        display: none;
+    }
+
+    .wave {
+        display: none;
+    }
+
+    .login-content {
+        justify-content: center;
+    }
+}
+

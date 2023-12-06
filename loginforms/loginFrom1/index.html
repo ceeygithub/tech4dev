@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login form</title>
+    <link rel="stylesheet" href="stlye.css">
+</head>
+
+<body>
+    <header>
+        <h1 id="title">Login Form</h1>
+        <p id="description">Please fill the form with the reqired information</p>
+    </header>
+    <form id="survey-form" method="post">
+        <fieldset>
+            <label id="name-label">Name<input id="name" type="text" placeholder="Enter name" required /></label>
+            <label id="email-label">Email<input id="email" type="email" placeholder="Enter email" required /></label>
+            <label id="number-label">Age<input id="number" type="number" min="13" max="120" placeholder="Age"
+                    reqiured /></label>
+            <label for="profile-picture">Upload a profile picture: <input id="profile-picture" type="file"
+                    name="file" /></label>
+            <label for="bio">Provide a bio:
+                <textarea id="bio" name="bio" rows="3" cols="30" placeholder="I like coding on the beach..."></textarea>
+                <label>Which option best describes your current role?
+                    <select id="dropdown">
+                        <option>Select current role</option>
+                        <option>Student</option>
+                        <option>Full time job</option>
+                        <option>Full time learner</option>
+                        <option>Prefer not to say</option>
+                        <option>Other</option>
+                    </select></label>
+        </fieldset>
+        <fieldset>
+            <legend>Gender</legend><label id=""><input name="user-recommend" type="radio" value="male"
+                    class="inline" />Male</label>
+            <label id=""><input name="user-recommend" type="radio" value="female" class="inline" />Female</label>
+            <label id=""><input name="user-recommend" type="radio" value="prefer not to say" class="inline" />Prefer not
+                to say</label>
+        </fieldset>
+        <label>What is your favorite thing about us?
+            <select id="dropdown">
+                <option>Select an option</option>
+                <option>Challenges</option>
+                <option>Projects</option>
+                <option>Community</option>
+                <option>Open source</option>
+
+            </select></label>
+
+        <label for="terms-and-conditions">
+            <input class="inline" id="terms-and-conditions" type="checkbox" required name="terms-and-conditions" /> I
+            accept the
+            <a href="https://www.google.com/">terms and conditions</a>
+
+        </label>
+        <input id="submit" type="submit" value="submit" />
+    </form>
+</body>
+
+</html>

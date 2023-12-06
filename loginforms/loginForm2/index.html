@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login Form</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <img class="wave" src="assets/wave.png">
+    <div class="container">
+        <div class="img">
+            <img src="assets/undraw_profile_data_re_v81r.svg">
+        </div>
+        <div class="login-content">
+
+            <form id="survey-form" method="post">
+                <img src="assets/undraw_female_avatar_efig (1).svg">
+                <fieldset>
+                    <label id="name-label">Full Name<input id="name" type="text" placeholder="Enter name"
+                            required /></label>
+                    <label id="email-label">Email<input id="email" type="email" placeholder="Enter email"
+                            required /></label>
+                    <label id="number-label">Age<input id="number" type="number" min="18" max="90" placeholder="Age"
+                            reqiured /></label>
+                    <label for="profile-picture" class="upload">Picture: <input id="profile-picture" type="file"
+                            name="file" /></label>
+
+                </fieldset>
+                <!-- <label>
+                    <input type="radio" name="genre" value="Male">Male
+                </label>
+                <label>
+                    <input type="radio" name="genre" value="Female">Female
+                </label>
+                <label>
+                    <input type="radio" name="genre" value="Other">I prefer not to answer
+                </label> -->
+
+
+                <label for="terms-and-conditions">
+                    <input class="inline" id="terms-and-conditions" type="checkbox" required
+                        name="terms-and-conditions" /> I
+                    accept the<a href="https://www.google.com/" target="_blank">terms and conditions</a>
+
+                </label>
+                <input id="submit" type="submit" value="submit" />
+            </form>
+
+        </div>
+    </div>
+</body>
+
+</html>

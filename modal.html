@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            position: relative;
+        }
+
+        .modal {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(255, 255, 255, 0.882);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modalContent {
+            width: 500px;
+            padding: 4rem;
+            height: auto;
+            border: 1px solid grey;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Medium</h1>
+        <button class="btn">Get in touch</button>
+    </div>
+    <div class="modal" id="modal">
+        <div class="modalContent">
+            <h3>Join Medium</h3>
+            <button class="modalBtn">Sign up with google</button>
+        </div>
+    </div>
+
+    <script>
+        const btnClick = document.querySelector('.btn');
+        const modal = document.getElementById("modal");
+        const closeModal = document.querySelector('.modalContent');
+
+        const openModal = () => {
+            modal.style.display = "flex";
+        }
+
+        btnClick.addEventListener('click', () => {
+            openModal();
+        });
+
+        modal.addEventListener('click', function (event) {
+            if (event.target === modal) modal.style.display = "none";
+
+        });
+
+        closeModal.addEventListener("click", (event) => {
+            event.stopPropagation();
+        });
+    </script>
+</body>
+
+</html>
