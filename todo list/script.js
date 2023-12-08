@@ -2,7 +2,7 @@
 
 const input = document.querySelector('#input-task');
 const listContainer = document.querySelector('#list-container');
-const addBtn = document.querySelector('#add-task');
+const addBtn = document.querySelector('#add-taskBtn');
 
 addBtn.addEventListener('click', (e) => {
     e.preventDefault();
@@ -14,6 +14,7 @@ addBtn.addEventListener('click', (e) => {
         listContainer.appendChild(li);
         let span = document.createElement('span');
         span.innerText = "\u00d7";
+        // span.innerHTML = `<i class="fa - solid fa - xmark"></i>`;
         li.appendChild(span);
     }
 
