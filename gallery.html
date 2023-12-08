@@ -16,6 +16,7 @@
         .container {
             max-width: 1220px;
             margin: 0 auto;
+            position: relative;
         }
 
         form {
@@ -37,6 +38,12 @@
             width: 200px;
             font-size: 20px;
             margin-top: 2rem;
+        }
+
+        .remove {
+            position: absolute;
+            top: 15%;
+            right: 20%;
         }
 
         .row {
@@ -121,11 +128,10 @@
                 <input type="text" id="imageLink">
 
             </div>
-            <div class="btn-wrapper">
-                <button class="btn">Add</button>
-                <button class="btn">Remove</button>
-            </div>
+            <button class="btn">Add</button>
+
         </form>
+        <button class="btn remove">Remove</button>
         <div class="gallery">
             <ul class="inner-gallery">
 
@@ -191,6 +197,23 @@
         }
 
         fillGallery();
+
+
+        const removeFirstImage = () => {
+
+            if (imageList.length > 0) {
+                const firstListItem = document.querySelector('.inner-gallery li:first-child');
+
+                if (firstListItem) {
+                    firstListItem.remove();
+                }
+            }
+        }
+
+        removeButton = document.querySelector('.remove');
+        removeButton.addEventListener('click', () => {
+            removeFirstImage();
+        });
 
     </script>
 </body>

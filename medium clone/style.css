@@ -47,6 +47,9 @@ ul {
     justify-content: space-between;
     align-items: center;
 }
+.hamburger{
+    display: none;
+}
 .hero{
     background-color: #FFC117;
 }
@@ -122,3 +125,9 @@ box-shadow: -1px 0px 27px 0px rgba(0, 0, 0, 0.39);
 
 }
 
+@media(max-width:600px){
+ul{
+    display: none;
+}
+
+}
