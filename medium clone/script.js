@@ -3,7 +3,7 @@
 const clickedBtn = document.querySelector('.nav-btn')
 const modalWindow = document.querySelector('.modalWrapper')
 const form = document.querySelector('form')
-modalWindow.style.display = "none"
+// modalWindow.style.display = "none"
 
 
 clickedBtn.addEventListener('click', function () {
@@ -27,3 +27,6 @@ form.addEventListener('click', function (e) {
 // hamburger
 let hamburger = document.querySelector('.hamburger')
 let ul = document.querySelector('ul')
+hamburger.addEventListener('click', () => {
+    ul.classList.toggle('active');
+})
