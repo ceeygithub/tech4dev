@@ -13,8 +13,10 @@ addBtn.addEventListener('click', (e) => {
         li.innerText = input.value;
         listContainer.appendChild(li);
         let span = document.createElement('span');
-        span.innerText = "\u00d7";
-        // span.innerHTML = `<i class="fa - solid fa - xmark"></i>`;
+        let icon = document.createElement('i');
+        icon.className = "fa-solid fa-xmark";
+        span.appendChild(icon);
+
         li.appendChild(span);
     }
 
@@ -28,8 +30,8 @@ listContainer.addEventListener('click', (e) => {
     if (e.target.tagName === 'LI') {
         e.target.classList.toggle('checked');
         saveData();
-    } else if (e.target.tagName === 'SPAN') {
-        e.target.parentElement.remove();
+    } else if (e.target.tagName === 'I') {
+        e.target.parentElement.parentElement.remove();
         saveData();
     }
 
@@ -44,3 +46,4 @@ const savedData = localStorage.getItem('data');
 if (savedData) {
     listContainer.innerHTML = savedData;
 }
+// localStorage.clear();
