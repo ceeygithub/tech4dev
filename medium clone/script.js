@@ -30,3 +30,22 @@ let ul = document.querySelector('ul')
 hamburger.addEventListener('click', () => {
     ul.classList.toggle('active');
 })
+
+
+// dark theme
+let icon = document.querySelector('.moon')
+let logo = document.querySelector('.logo')
+
+icon.addEventListener('click', () => {
+    document.body.classList.toggle('darkTheme');
+    if (document.body.classList.contains('darkTheme')) {
+
+        icon.className = "fa-solid fa-sun sun"
+        logo.src = "./assets/62a24af4d4cb2577520fca1a.png "
+
+    }
+    else {
+        icon.className = "fa-solid fa-moon moon";
+        logo.src = "./assets/medium_logo-removebg-preview.png "
+    }
+})
