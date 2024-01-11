@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Hello</h1>
+    <script>
+        function processScores(scores) {
+            // Step 1: Double the scores using map
+            const doubledScores = studentScores.map(element => element * 2);
+            console.log(doubledScores);
+
+            // Step 2: Filter out scores less than 50 using filter
+            const filteredScores = studentScores.filter(element => element > 50);
+            console.log(filteredScores)
+
+            // Step 3: Calculate the average of the remaining scores using reduce
+            const sum = filteredScores.reduce((acc, num) => acc + num, 0);
+            const average = sum / filteredScores.length;
+            console.log(average)
+
+            // Step 4: Find the highest score among the remaining scores using reduce
+            const highestScore = filteredScores.reduce((max, score) => (score > max ? score : max), studentScores[0]);
+            console.log(highestScore)
+
+            // Step 5: Calculate the difference between the highest score and each remaining score using map
+            const differences = filteredScores.map((value, index, array) => {
+                if (index === 0) {
+                    return 0; // No difference for the first element
+                } else {
+                    return value - array[index - 1];
+                }
+            });
+            console.log(differences)
+            return {
+                average,
+                highestScore,
+                differences,
+            };
+        }
+
+
+        // Example usage:
+        const studentScores = [30, 45, 60, 75, 90];
+        const result = processScores(studentScores);
+        console.log(result);
+    </script>
+</body>
+
+</html>
