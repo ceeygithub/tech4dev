@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <script src="https://kit.fontawesome.com/b3e2dea5f4.js" crossorigin="anonymous"></script>
+
+
+    <style>
+        * {
+      margin: 0;
+      padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+     }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            height: 75px;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            width: 90%;
+             margin:0 50px;
+          /* max-width:1420px ; */
+           /* margin: 20px 60px; */
+        }
+
+        .logo,
+        .fa-wave-square {
+            font-size: xx-large;
+        }
+
+        ul {
+            display: flex;
+            list-style-type: none;
+            width: 300px;
+            justify-content: space-between;
+
+        }
+
+
+        ul li {
+            font-size: larger;
+
+        }
+
+        form {
+            display: flex;
+        }
+
+        .search-container {
+            border: 1px grey solid;
+            padding: 10px;
+            border-radius: 20px;
+
+        }
+
+        #search-box {
+            border: none;
+            background: transparent;
+        }
+
+        #search-box:focus {
+            outline: none;
+        }
+
+
+.container {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+         display: flex;
+            margin-top: 5rem;
+ max-width:1420px ;
+  margin: 100px 50px 60px 50px;
+  background: red;
+}
+
+
+p {
+    line-height: 1.5;
+    margin-top: 1rem;
+    /* font-size: 24px; */
+    font-size: min(6vmin, calc(1rem + 0.23vmax))
+}
+        .main-right{
+    width: 30%;
+    margin-top: 6rem;
+
+}
+.explore-btn{
+border: none;
+margin-top: 2rem;
+background: transparent;
+transition: all 0.5s ease; 
+    font-size: 15px;
+    font-weight: bold;
+}
+.explore-btn:hover{
+    font-size: 17px;
+}
+
+  .main-left {
+            position: relative;
+            width: 70%;
+            height: 500px;
+             overflow: hidden;
+     }
+  .blur-bg{
+    width: 400px;
+    height: 400px;
+    border-radius: 70% 30% 30% 70% / 21% 40% 60% 40%;
+     background: linear-gradient(0deg, rgba(30, 171, 146, 1) 66%, rgba(130, 16, 184, 1) 67%);
+     filter: blur(80px);
+     position: absolute;
+     top: 20%;
+   left: 50%;
+z-index: -1;
+}
+
+      .fa-chevron-left{
+font-size: 20px;
+font-weight: bold;
+position: absolute;
+bottom: 50%;
+left: 10%;
+z-index: 99;
+background: rgb(217, 216, 216);
+    border-radius: 4px;
+    padding: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.fa-chevron-right{
+font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    bottom: 50%;
+    right: 10%;
+    z-index: 99;
+    background: rgba(255, 255, 255, 0.2);
+        border-radius: 4px;
+        padding: 10px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+      
+    
+}
+.fa-chevron-left:hover, .fa-chevron-right:hover{
+background: rgba(255, 255, 255, 0.4);
+}
+  .sliderWrapper {
+            width: 100%;
+            height: 100%;
+            perspective: 1000px;
+            position: relative;
+            transform-style: preserve-3d;
+        }
+
+        .sliderImages {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: blur(0);
+            position: absolute;
+            transition: transform 0.5s ease-in-out;
+       }
+
+
+.hide {
+    display: none;
+}
+/* product session */
+.product{
+    display: grid;
+    grid-template-columns: 0.5fr 1.5fr;
+                margin-top: 5rem;
+ max-width:1420px ;
+  margin: 100px 50px 60px 50px;
+  background: yellow;
+  /* display: none; */
+}
+.product-right{
+    width: 50%;
+}
+.product-right img{
+object-fit: cover;
+width: 100%;
+height: 100%;
+}
+.product-left{
+display: flex;
+}
+
+</style>
+</head>
+
+<body>
+    <nav>
+        <div>
+            <i class="fa-solid fa-wave-square"></i>
+            <span class="logo">SOUNDBEATS</span>
+        </div>
+        <ul>
+            <li>Home</li>
+            <li>Product</li>
+            <li>Support</li>
+        </ul>
+        <form>
+            <div class="search-container">
+                <i class="fa-solid fa-magnifying-glass"></i> <input type="text" placeholder="Enter word" id="search-box">
+            </div>
+        </form>
+        <i class="fa-solid fa-bag-shopping"></i>
+    </nav>
+
+    <div class="container hide">
+        <div class="main-right">
+            <h5 class="brand">
+        
+            </h5>
+            <h2 class="model">
+        
+            </h2>
+            <p class="description">
+            </p>
+            <button class="explore-btn">Explore <i class="fa-solid fa-arrow-right"></i> </button>
+        </div>
+        <div class="main-left">
+            <i class="fa-solid fa-chevron-left"></i>
+            <i class="fa-solid fa-chevron-right"></i>
+            <div class="sliderWrapper">
+                <!-- All images go here -->
+        
+        
+            </div>
+        </div>
+        
+        <div class="blur-bg"></div>
+    </div>
+
+    <div class="product hide ">
+    <div class="product-right">
+        <img src="./assets/image 1.png" alt="">
+    </div>
+    <div class="product-left">
+        <h5 class="brand">Anker</h5>
+        <h2 class="model">Soundcore Life P2 True</h2>
+        <p class="description">This sleek pair of truly wireless earbuds from Sony is the superior pick for all intents
+            and purposes, featuring
+            impressive digital noise-cancelling capabilities, proprietary technology for a premium audio experience, and
+            a
+            long-lasting battery life to get you through the day and beyond.
+        </p>
+        <p>Industry-leading active noise-cancelling processors and dual noise sensors completely tune out disturbances
+            around you,
+            allowing for whisper-quiet operation that creates incredible sound clarity, so you can hear every note or
+            word in any
+            type of sound environment.</p>
+    </div>
+
+    </div>
+
+
+  
+    <script >
+        
+          const images = [
+                {
+                    imageName: "Ear bud 1",
+                    imageLink: "./assets/image 1.png",
+                    alt: "white ear bud",
+                    brand: "Anker",
+                    model: "Soundcore Life P2 True",
+                    description: "The sound quality on this is great, with the highs and lows being excellent. With IPX7 rating, you can use them on the shower without damaging them.The battery on this earbuds is quite good, it can last you up to 7 hours with a single full charge. ",
+                },
+                {
+                    imageName: "Ear bud 3",
+                    imageLink: "./assets/image 3.png",
+                    alt: "Ear bud",
+                    brand: "Jabra",
+                    model: "Elite 75t Earbuds",
+                    description: "With the IP 55 rating, they can withstand low water pressure sprays and sweat. The sound quality is good but not so great, as the bass is a little low. The battery life on this phone is massive offering 7 hours of usage with full battery ",
+                },
+                {
+                    imageName: "Ear bud 4",
+                    imageLink: "./assets/image 4.png",
+                    alt: "Ear bud",
+                    brand: "Sashi",
+                    model: "Echo Buds",
+                    description: "The sound quality is actually good considering the price range. In case you are caught up in the rain, sweating as a result of working out,there is no need to worry as they are IPX4 rated. ",
+                },
+                {
+                    imageName: "Ear bud 5",
+                    imageLink: "./assets/image 5.png",
+                    alt: "Ear bud",
+                    brand: "TaoTronics",
+                    model: "SoundLiberty 79",
+                    description: "These buds are IPX7 rated, hence they are both water and sweat resistant. Having Bluetooth 5.0, connectivity here should not be a problem. The sound and audio quality on them is good, but if you are looking for pronounced bass then these are not going to satisfy you.",
+                },
+                {
+                    imageName: "Ear bud 8",
+                    imageLink: "./assets/image 8.png",
+                    alt: "Ear bud",
+                    brand: "Nira",
+                    model: "Soundcore Life P2 True",
+                    description: "With the IP 55 rating, they can withstand low water pressure sprays and sweat. The sound quality is good but not so great, as the bass is a little low. The battery life on this phone is massive offering 7 hours of usage with full battery ",
+                },
+                {
+                    imageName: "Ear bud 9",
+                    imageLink: "./assets/image 9.png",
+                    alt: "Ear bud",
+                    brand: "naro",
+                    model: "Soundcore Life P2 True",
+                    description: "The sound quality is actually good considering the price range. In case you are caught up in the rain, sweating as a result of working out,there is no need to worry as they are IPX4 rated. ",
+                },
+            ];
+
+         const slider = document.querySelector('.sliderWrapper');
+           const main = document.querySelector('.container');
+            const product = document.querySelector('.product');
+        //   const exploreBtn = document.querySelector('.explore-btn');
+
+               document.querySelector('.fa-chevron-left').addEventListener('click', () => {
+                    currentIndex = (currentIndex - 1 + images.length) % images.length;
+                    showSlide(currentIndex);
+                });
+
+                document.querySelector('.fa-chevron-right').addEventListener('click', () => {
+                    currentIndex = (currentIndex + 1) % images.length;
+                    showSlide(currentIndex);
+                });
+        document.querySelector('.explore-btn').addEventListener('click', () => {
+           main.classList.add('hide');
+            product.classList.remove('hide');
+        });
+                
+              
+            
+                    
+                      function fillGallery() {
+                            images.forEach((img) => {
+                                const imageElement = document.createElement('img');
+                                imageElement.classList.add('sliderImages');
+                                imageElement.src = img.imageLink;
+                                imageElement.alt = img.alt;
+
+                                slider.appendChild(imageElement);
+                            });
+                        }
+
+                        fillGallery();
+
+
+          let currentIndex = 0;
+
+            function showSlide(index) {
+                const slides = document.querySelectorAll('.sliderImages');
+                const brand = document.querySelector('.brand');
+                const model = document.querySelector('.model');
+                const description = document.querySelector('.description');
+
+                slides.forEach((img, i) => {
+                    const translateXValue = (i - index) * 35;  // Adjust this value for reduced spacing
+                    const translateZValue = Math.abs(i - index) * -500;  // Adjust this value for reduced spacing
+                    const transformValue = `translate3d(${translateXValue}%, 0, ${translateZValue}px)`;
+
+                    img.style.transition = 'transform 0.5s ease-in-out';
+                    img.style.transform = transformValue;
+
+                    if (i === index) {
+                        img.style.filter = 'none';
+                        img.style.zIndex = 1;
+
+                    } else {
+                        img.style.filter = 'blur(7px)';
+                        img.style.zIndex = 0;
+                    }
+                });
+                // Update content based on current index
+                const currentImage = images[index];
+                brand.innerHTML = currentImage.brand;
+                model.innerHTML = currentImage.model;
+                description.innerHTML = currentImage.description;
+            }
+            showSlide(currentIndex);
+
+
+            window.onload = () => {
+
+           product.classList.add('hide')
+                main.classList.remove('hide')
+
+            }
+           
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/b3e2dea5f4.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+.logo, .fa-wave-square{
+    font-size: xx-large;
+}
+        nav{
+    display: flex;
+    justify-content: space-between;
+    height: 75px;
+    align-items: center;
+position: fixed;
+top: 0;
+left: 0;
+z-index: 999;
+width: 100%;
+padding: 0 50px;
+backdrop-filter: blur(10px);
+background: rgba(247, 247, 247, 0.237);
+    
+}
+.back-btn{
+border: none;
+margin-top: 2rem;
+background: transparent;
+transition: all 0.5s ease; 
+    font-size: 15px;
+    font-weight: bold;
+}
+.back-btn:hover{
+    font-size: 17px;
+}
+
+.blur-bg{
+    width: 400px;
+    height: 400px;
+    border-radius: 70% 30% 30% 70% / 21% 40% 60% 40%;
+     background: linear-gradient(0deg, rgba(30, 171, 146, 1) 66%, rgba(130, 16, 184, 1) 67%);
+     filter: blur(80px);
+     position: absolute;
+     top: 15%;
+   left: 50%;
+z-index: -1;
+}
+        /* product session */
+.product{
+    display: grid;
+    grid-template-columns: 0.5fr 1.5fr;
+    margin: 200px 50px 0 50px;
+}
+.product-right{
+    width: 30%;
+}
+.product-right img{
+object-fit: contain;
+width: 500px;
+}
+.product-left{
+display: flex;
+position: relative;
+}
+
+marquee{
+    position: absolute;
+    top: 55%;
+    left: 0;
+}
+    </style>
+</head>
+<body>
+
+    <nav>
+    
+        <div>
+            <i class="fa-solid fa-wave-square"></i>
+            <span class="logo">SOUNDBEATS</span>
+        </div>
+        <a href="./position.html">
+            <button class="back-btn">Back <i class="fa-solid fa-arrow-right"></i> </button>
+        </a>
+    
+    </nav>
+    <div class="product ">
+        <div class="product-right">
+            <img src="./assets/image 1.png" alt="">
+        </div>
+        <div class="product-left">
+           <div>
+           <h5 class="brand">Anker</h5>
+           <h2 class="model">Soundcore Life P2 True</h2>
+              <p class="description">This sleek pair of truly wireless earbuds from Sony is the superior pick for all intents
+             and purposes, featuring
+            impressive digital noise-cancelling capabilities, proprietary technology for a premium audio experience, and
+           a
+            long-lasting battery life to get you through the day and beyond.
+            </p>
+           </div> 
+            <p>Industry-leading active   noise-cancelling processors and dual noise sensors completely tune out disturbances
+                around you,
+                allowing for whisper-quiet operation that creates incredible sound clarity, so you can hear every note or
+                word in any
+                type of sound environment.
+            </p>
+            <marquee behavior="scroll" direction="left">
+                Sweatproof &nbsp; &nbsp; &nbsp;Bluetooth &nbsp;&nbsp; &nbsp; &nbsp; Midnightblue/Citron &nbsp;&nbsp; &nbsp; &nbsp;
+                Siri &nbsp;&nbsp; &nbsp; &nbsp; Google Assistant&nbsp; &nbsp; &nbsp;
+                Water Resistant &nbsp;&nbsp; &nbsp; &nbsp; Flang Ear Tips
+            </marquee>
+        </div>
+    
+
+            <div class="blur-bg"></div>
+          
+    </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 class="output">Hello world!</h1>
+    <script>
+        function fetchData(url, successCallback, errorCallback) {
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    successCallback(data)
+                    console.log(data)
+                })
+                .catch(error => {
+                    errorCallback(error)
+                    console.log("an error occured")
+                });
+        }
+
+        function displayData(data) {
+            // Check if data is available and has elements
+            if (data && data.length > 0) {
+                const outputElement = document.querySelector('.output');
+                const userData = data[0];
+
+                // Using template literals to construct the string
+                const outputString = `User ID is: ${userData.id}<br/>Title: ${userData.title}`;
+
+                // Update the content of the output element
+                outputElement.innerHTML = outputString;
+            } else {
+                console.error('Data is undefined or empty.');
+            }
+        }
+
+        function handleError(error) {
+            console.error('Error during fetch:', error);
+        }
+
+        // Use a sample public API endpoint (JSONPlaceholder's /todos)
+        const apiUrl = 'https://jsonplaceholder.typicode.com/todos';
+
+        // Fetch data and pass displayData as success callback and handleError as error callback
+        fetchData(apiUrl, displayData, handleError);
+
+        async function newFunction() {
+            return 0
+        }
+        newFunction()
+        console.log(newFunction())
+    </script>
+</body>
+
+</html>
